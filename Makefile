@@ -17,3 +17,9 @@ docker-pull:
 
 docker-build:
 	docker-compose build
+
+remove-ps:
+	docker rm -f $$(docker ps -a -q)
+
+remove-images: 
+	docker rmi $$(docker images -a -q)
