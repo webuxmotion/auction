@@ -22,7 +22,7 @@ remove-ps:
 	docker rm -f $$(docker ps -a -q)
 
 remove-images: 
-	docker rmi $$(docker images -a -q)
+	docker rmi --force $$(docker images -a -q)
 
 build: build-gateway build-frontend build-api
 
